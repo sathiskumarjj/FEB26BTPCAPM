@@ -1,11 +1,9 @@
 // srv/server.js
+const proxy = require("@cap-js-community/odata-v2-adapter");
 const cds = require("@sap/cds");
-const v2adapter = require("@cap-js-community/odata-v2-adapter");
 
 // Attach V2 adapter during bootstrap
-cds.on("bootstrap", app => {
-    app.use(v2adapter());
-});
+cds.on('bootstrap', app => app.use(proxy()));;
 
 // Export CAP server
 module.exports = cds.server;

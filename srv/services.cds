@@ -12,6 +12,8 @@ service BookService {
     category as genre} excluding {createdBy, createdAt, modifiedAt, modifiedBy};
     @readOnly entity Authers as projection on database.Authors;
     @readOnly entity AddressSrv as projection on database.Address;
+
+    @readOnly entity BusinessPartnersSrv as projection on database.BusinessPartners;
 }
 
 service OrderService {

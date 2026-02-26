@@ -34,3 +34,10 @@ entity Address : cuid {
     state     : String ;
     country  : String ;
 }
+
+
+entity BusinessPartners {
+    Key ID            : UUID;
+    SupplierName  : String;
+    City          : String;
+}
