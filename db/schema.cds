@@ -28,16 +28,16 @@ entity OrderItems : cuid {
 }
 
 
-entity Address : cuid {
-    address     : String ;
-    city   : String ;
-    state     : String ;
-    country  : String ;
-}
+// entity Address : cuid {
+//     address     : String ;
+//     city   : String ;
+//     state     : String ;
+//     country  : String ;
+// }
 
 
-entity BusinessPartners {
-    Key ID            : UUID;
-    SupplierName  : String;
-    City          : String;
-}
+// entity BusinessPartners {
+//     Key ID            : UUID;
+//     SupplierName  : String;
+//     City          : String;
+// }

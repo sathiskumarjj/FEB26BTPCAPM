@@ -2,6 +2,7 @@
 ### Create Orders
 POST http://localhost:8080/odata/v4/OrderService/Orders
 Content-Type : application/json
+Authorization: Basic klaus:pass_klaus
 
 {
     "items" : [
@@ -19,15 +20,13 @@ POST http://localhost:8080/odata/v4/OrderService/Orders
 Content-Type : application/json
 
 {
-    "items" : [
-            {
-                      "book_ID": "fd0c5fda-8811-4e20-bcff-3a776abc290a",
-                              "amount": 10
-                                        
-                                                }
-                                                        
-                                                            ]
-                                                            }
+  "items": [
+    {
+      "book_ID": "fd0c5fda-8811-4e20-bcff-3a776abc290a",
+      "amount": 10
+    }
+  ]
+}
 
 ### Read Orders
 GET http://localhost:8080/odata/v4/OrderService/Orders
@@ -42,4 +41,62 @@ Accept: application/json
 ###
 GET http://localhost:8080/odata/v4/OrderService/Orders?$expand=items
 Accept: application/json
+
+
  
+###
+GET http://localhost:8080/odata/v4/AdminService/
+Accept: application/json
+Authorization: Basic sathis:pass_sathis
+
+
+### Step1 Create Order
+POST http://localhost:8080/odata/v4/OrderService/Orders
+Content-Type : application/json
+Authorization: Basic klaus:pass_klaus
+
+{
+  "items": [
+    {
+      "book_ID": "fd0c5fda-8811-4e20-bcff-3a776abc290a",
+      "amount": 10
+    }
+  ]
+}
+
+
+### Stp2 Display Order
+GET http://localhost:8080/odata/v4/OrderService/Orders?$expand=items
+Accept: application/json
+
+
+
+### Step‑1 : Create Order
+POST http://localhost:8080/odata/v4/OrderService/Orders
+Content-Type: application/json
+Authorization: Basic klaus:pass_klaus
+
+{
+  "items": [
+    {
+      "book_ID": "fd0c5fda-8811-4e20-bcff-3a776abc290a",
+      "amount": 10
+    }
+  ]
+}
+
+### Step‑2 : Display Order
+GET http://localhost:8080/odata/v4/OrderService/Orders?$expand=items
+Accept: application/json
+Authorization: Basic klaus:pass_klaus
+
+### Step‑3 : Display order by user who didn’t create the order
+GET http://localhost:8080/odata/v4/OrderService/Orders?$expand=items
+Accept: application/json
+Authorization: Basic mia:pass_mia
+
+### Step‑4 : Display Order for Administrator
+
+GET http://localhost:8080/odata/v4/OrderService/Orders?$expand=items
+Accept: application/json
+Authorization: Basic sathis:pass_sathis
